@@ -1,0 +1,11 @@
+kitvote:
+  interval: 10800
+  quantity: 22
+
+messages:
+  prefix: "&f[&cKitVote&f] "
+  you_cant_vote: "&cVous ne pourrez voter que dans &e%time%&c."
+  vote_time_reset: "&aL'intervalle d'utilisation de la commande &e/kitvote &aà été réinitialisée pour le joueur &e%player% &a!"
+  you_can_now_vote: "&cVous pouvez à nouveau utiliser la commande &e/kitvote&c."
+  you_got_a_reward: "&aVous venez de recevoir &e%quantity% &afioles d'XP."
+  permission_denied: "&cVous n'avez pas la permission d'effectuer ceci !"

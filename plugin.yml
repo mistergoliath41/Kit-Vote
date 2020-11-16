@@ -1,0 +1,8 @@
+main: fr.mistergoliath.kitvote.Main
+name: KitVote
+author: mistergoliath
+version: 1.0
+commands:
+  kitvote:
+    description: Main command of the KitVote plugin.
+    aliases: [kv]
