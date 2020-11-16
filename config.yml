@@ -8,4 +8,5 @@ messages:
   vote_time_reset: "&aL'intervalle d'utilisation de la commande &e/kitvote &aà été réinitialisée pour le joueur &e%player% &a!"
   you_can_now_vote: "&cVous pouvez à nouveau utiliser la commande &e/kitvote&c."
   you_got_a_reward: "&aVous venez de recevoir &e%quantity% &afioles d'XP."
+  player_not_exists: "&cLe joueur &e%player% &cn'existe pas."
   permission_denied: "&cVous n'avez pas la permission d'effectuer ceci !"

@@ -32,6 +32,8 @@ public class KitVote implements CommandExecutor {
 						MessageUtils.sendFormatedMessage(p, getConfig().getString("messages.you_cant_vote").replace("%time%", getVoteManager().getFormattedTime(getVoteManager().getTimeRemaining(p))));
 						return true;
 					}
+				} else {
+					MessageUtils.sendFormatedMessage(p, getConfig().getString("messages.permission_denied"));
 				}
 			} else if (args.length >= 1) {
 				switch (args[0].toLowerCase()) {
@@ -40,17 +42,18 @@ public class KitVote implements CommandExecutor {
 							MessageUtils.sendFormatedMessage(p, getConfig().getString("messages.permission_denied"));
 							return false;
 						}
-						if (args.length == 2 && Bukkit.getServer().getPlayer(args[1]) != null) {
-							Player t = Bukkit.getServer().getPlayer(args[1]);
-							getVoteManager().resetTime(t);
-							MessageUtils.sendFormatedMessage(p, getConfig().getString("messages.vote_time_reset").replace("%player%", t.getName()));
-							MessageUtils.sendFormatedMessage(t, getConfig().getString("messages.you_can_now_vote"));
+						if (args.length == 2) {
+							if (Bukkit.getServer().getPlayer(args[1]) != null) {
+								Player t = Bukkit.getServer().getPlayer(args[1]);
+								getVoteManager().resetTime(t);
+								MessageUtils.sendFormatedMessage(p, getConfig().getString("messages.vote_time_reset").replace("%player%", t.getName()));
+								MessageUtils.sendFormatedMessage(t, getConfig().getString("messages.you_can_now_vote"));
+							} else {
+								MessageUtils.sendFormatedMessage(p, getConfig().getString("messages.player_not_exists").replace("%player%", args[1]));
+							}
 							return true;
 						}
-						break;
-		
-					default:
-						break;
+						return false;
 				}
 			}
 		}
